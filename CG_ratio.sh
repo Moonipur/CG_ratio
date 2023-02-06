@@ -198,26 +198,26 @@ CG_SEP() {
 CG_COUNT() {
    if [ -f ${sort150}.bam ]
    then
-      wc -l CG_ratio/SORT_150/${sort150}_CG_2_3.txt
       wc -l CG_ratio/SORT_150/${sort150}_CG_1_2.txt
+      wc -l CG_ratio/SORT_150/${sort150}_CG_2_3.txt
    fi
    
    if [ -f ${sort167}.bam ]
    then
-      wc -l CG_ratio/SORT_167/${sort167}_CG_2_3.txt
       wc -l CG_ratio/SORT_167/${sort167}_CG_1_2.txt
+      wc -l CG_ratio/SORT_167/${sort167}_CG_2_3.txt
    fi
    
    if [ -f ${more150}.bam ]
    then
-      wc -l CG_ratio/MORE_150/${more150}_CG_2_3.txt
       wc -l CG_ratio/MORE_150/${more150}_CG_1_2.txt
+      wc -l CG_ratio/MORE_150/${more150}_CG_2_3.txt
    fi
    
    if [ -f ${more167}.bam ]
    then
-      wc -l CG_ratio/MORE_167/${more167}_CG_2_3.txt
       wc -l CG_ratio/MORE_167/${more167}_CG_1_2.txt
+      wc -l CG_ratio/MORE_167/${more167}_CG_2_3.txt
    fi  
 }
 
