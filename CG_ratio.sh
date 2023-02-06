@@ -149,37 +149,49 @@ FLAGSTAT() {
 }
 
 CG_SEP() {
-   if [[ -f CG_ratio/SORT_150/${sort150}_CG_2_3.txt ]] && [[ -f CG_ratio/SORT_150/${sort150}_CG_1_2.txt ]]
+   if [ ! -f CG_ratio/SORT_150/${sort150}_CG_2_3.txt ]
    then
       samtools view ${sort150}.bam | cut -f10 | cut -c 2,3 | grep "CG" > CG_ratio/SORT_150/${sort150}_CG_2_3.txt
-      samtools view ${sort150}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/SORT_150/${sort150}_CG_1_2.txt
+      if [ ! -f CG_ratio/SORT_150/${sort150}_CG_1_2.txt ]
+      then
+         samtools view ${sort150}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/SORT_150/${sort150}_CG_1_2.txt
+      fi
       echo "***Success; CG count at 1,2 & 2,3 of ${sort150} is extracted!"
    else
       echo "***PASS; ${sort150} CG count is exist"
    fi
-   if [[ -f CG_ratio/SORT_167/${sort167}_CG_2_3.txt ]] && [[ -f CG_ratio/SORT_167/${sort167}_CG_1_2.txt ]]
+   if [ ! -f CG_ratio/SORT_167/${sort167}_CG_2_3.txt ]
    then
       samtools view ${sort167}.bam | cut -f10 | cut -c 2,3 | grep "CG" > CG_ratio/SORT_167/${sort167}_CG_2_3.txt
-      samtools view ${sort167}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/SORT_167/${sort167}_CG_1_2.txt
+      if [ ! -f CG_ratio/SORT_167/${sort167}_CG_1_2.txt ]
+      then
+         samtools view ${sort167}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/SORT_167/${sort167}_CG_1_2.txt
+      fi
       echo "***Success; CG count at 1,2 & 2,3 of ${sort167} is extracted!"
    else
       echo "***PASS; ${sort167} CG count is exist"   
    fi
-   if [[ -f CG_ratio/MORE_150/${more150}_CG_2_3.txt ]] && [[ -f CG_ratio/MORE_150/${more150}_CG_1_2.txt ]]
+   if [ ! -f CG_ratio/MORE_150/${more150}_CG_2_3.txt ]
    then
       samtools view ${more150}.bam | cut -f10 | cut -c 2,3 | grep "CG" > CG_ratio/MORE_150/${more150}_CG_2_3.txt
-      samtools view ${more150}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/MORE_150/${more150}_CG_1_2.txt
+      if [ ! -f CG_ratio/MORE_150/${more150}_CG_1_2.txt ]
+      then
+         samtools view ${more150}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/MORE_150/${more150}_CG_1_2.txt
+      fi
       echo "***Success; CG count at 1,2 & 2,3 of ${more150} is extracted!"
    else
-      echo "***PASS;  ${more150} CG count is exist"
+      echo "***PASS; ${more150} CG count is exist"
    fi
-   if [[ -f CG_ratio/MORE_167/${more167}_CG_2_3.txt ]] && [[ -f CG_ratio/MORE_167/${more167}_CG_1_2.txt ]]
+   if [ ! -f CG_ratio/MORE_167/${more167}_CG_2_3.txt ]
    then
       samtools view ${more167}.bam | cut -f10 | cut -c 2,3 | grep "CG" > CG_ratio/MORE_167/${more167}_CG_2_3.txt
-      samtools view ${more167}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/MORE_167/${more167}_CG_1_2.txt
+      if [ ! -f CG_ratio/MORE_167/${more167}_CG_1_2.txt ]
+      then
+         samtools view ${more167}.bam | cut -f10 | cut -c 1,2 | grep "CG" > CG_ratio/MORE_167/${more167}_CG_1_2.txt
+      fi
       echo "***Success; CG count at 1,2 & 2,3 of ${more167} is extracted!"
    else
-      echo "***PASS;  ${more167} CG count is exist"
+      echo "***PASS; ${more167} CG count is exist"
    fi
 }
 
