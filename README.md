@@ -1,6 +1,7 @@
 # CG_ratio
 
-# Gsage: CG_ratio [-i|h]
+# Usage: 
+  CG_ratio [-i|h]
 
 # Description: 
   CG_ratio is a bash script that is use for counting CG-pattern content at 1,2 and 2,3 residues of cfDNA
